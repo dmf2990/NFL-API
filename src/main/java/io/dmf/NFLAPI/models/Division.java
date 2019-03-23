@@ -15,26 +15,25 @@ public class Division {
 	@GeneratedValue
 	private Long id;
 	private String divName;
-	private String location;
 	private String conference;
 	
 	private int rating;
 	
 	@OneToMany(mappedBy = "division")
-	private Collection<Team> allTeamsInDivision = new HashSet<>();
+	private Collection<Team> allTeams = new HashSet<>();
 	
 	@ManyToMany
-	private Collection<Stat> allStatsForDivision = new HashSet<>();
+	private Collection<Stat> allStats = new HashSet<>();
 	
 	@OneToMany(mappedBy = "division")
-	private Collection<Analysis> allDivAnalysis = new HashSet<>();
+	private Collection<Analysis> allAnalysis = new HashSet<>();
 	
 	public Division() {} // JPA hook
 	
-	public Division(String divName, String location, String conference) {
+	public Division(String divName, String conference, int rating) {
 		this.divName = divName;
-		this.location = location;
 		this.conference = conference;
+		this.rating = rating;
 	}
 	
 	public int getRating() {
@@ -54,28 +53,24 @@ public class Division {
 		return divName;
 	}
 
-	public String getLocation() {
-		return location;
-	}
-
 	public String getConference() {
 		return conference;
 	}
 	
-	public Collection<Team> getAllTeamsInDivision() {
-		return allTeamsInDivision;
+	public Collection<Team> getAllTeams() {
+		return allTeams;
 	}
 	
 	public void addStat(Stat stat) {
-		allStatsForDivision.add(stat);	
+		allStats.add(stat);	
 	}
 	
-	public Collection<Stat> getAllStatsForDivision() {
-		return allStatsForDivision;
+	public Collection<Stat> getAllStats() {
+		return allStats;
 	}
 	
-	public Collection<Analysis> allDivAnalysis() {
-		return allDivAnalysis;
+	public Collection<Analysis> allAnalysis() {
+		return allAnalysis;
 	}
 
 }

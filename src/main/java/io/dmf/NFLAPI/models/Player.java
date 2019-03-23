@@ -19,7 +19,7 @@ public class Player {
 	private Long id;
 
 	private String playerName;
-	private String playerAge;
+	private String playerPosition;
 	
 	private int rating;
 	
@@ -30,22 +30,22 @@ public class Player {
 	private Team team;
 
 	@ManyToMany
-	private Collection<Stat> allStatsForPlayer = new HashSet<>();
+	private Collection<Stat> allStats = new HashSet<>();
 
-	@OneToMany(mappedBy = "song")
-	private Collection<Analysis> allAnalysisForPlayer = new HashSet<>();
+	@OneToMany(mappedBy = "player")
+	private Collection<Analysis> allAnalysis = new HashSet<>();
 
 	public Player() {
 	}
 
-	public Player(String playerName, String playerAge, Team team) {
+	public Player(String playerName, String playerPosition, Team team) {
 		this.playerName = playerName;
-		this.playerAge = playerAge;
+		this.playerPosition = playerPosition;
 		this.team = team;
 	}
 
 	public void addStat(Stat stat) {
-		allStatsForPlayer.add(stat);
+		allStats.add(stat);
 	}
 	
 	public void setRating(int rating) {
@@ -60,8 +60,8 @@ public class Player {
 		return playerName;
 	}
 
-	public String getPlayerAge() {
-		return playerAge;
+	public String getPlayerPosition() {
+		return playerPosition;
 	}
 
 	public int getRating() {
@@ -72,11 +72,11 @@ public class Player {
 		return team;
 	}
 
-	public Collection<Stat> getAllStatsForPlayer() {
-		return allStatsForPlayer;
+	public Collection<Stat> getAllStats() {
+		return allStats;
 	}
 
-	public Collection<Analysis> getAllAnalysisForPlayer() {
-		return allAnalysisForPlayer;
+	public Collection<Analysis> getAllAnalysis() {
+		return allAnalysis;
 	}
 }

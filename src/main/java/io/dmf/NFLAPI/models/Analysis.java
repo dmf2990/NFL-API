@@ -70,5 +70,4 @@ public class Analysis {
 		this.team = team;
 	}
 	
-	
 }

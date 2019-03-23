@@ -19,33 +19,33 @@ public class Team {
 		@GeneratedValue
 		private Long id;
 		private String teamName;
-		private String logo;
+		private String mascot;
 		
 		private int rating;
 
 		@OneToMany(mappedBy = "team")
-		private Collection<Player> allPlayersForTeam = new HashSet<Player>();
+		private Collection<Player> allPlayers = new HashSet<Player>();
 
 		@JsonIgnore
 		@ManyToOne
 		private Division division;
 
 		@ManyToMany
-		private Collection<Stat> allStatsForTeam = new HashSet<Stat>();
+		private Collection<Stat> allStats = new HashSet<Stat>();
 		
 		@OneToMany(mappedBy = "team")
-		private Collection<Analysis> allAnalysisForTeam = new HashSet<Analysis>();
+		private Collection<Analysis> allAnalysis = new HashSet<Analysis>();
 
 		public Team() {}
 
-		public Team(String teamName, String logo, Division division) {
+		public Team(String teamName, String mascot, Division division) {
 			this.teamName = teamName;
-			this.logo = logo;
+			this.mascot = mascot;
 			this.division = division;
 		}
 		
 		public void addStat(Stat stat) {
-			allStatsForTeam.add(stat);
+			allStats.add(stat);
 		}
 		
 		// setter
@@ -65,24 +65,24 @@ public class Team {
 			return teamName;
 		}
 
-		public String getLogo() {
-			return logo;
+		public String getMascot() {
+			return mascot;
 		}
 
 		public Division getDivision() {
 			return division;
 		}
 		
-		public Collection<Player> getAllPlayersForTeam() {
-			return allPlayersForTeam;
+		public Collection<Player> getAllPlayers() {
+			return allPlayers;
 		}
 
-		public Collection<Stat> getAllStatsForTeam() {
-			return allStatsForTeam;
+		public Collection<Stat> getAllStats() {
+			return allStats;
 		}
 		
-		public Collection<Analysis> getAnalysis() {
-			return allAnalysisForTeam;
+		public Collection<Analysis> getAllAnalysis() {
+			return allAnalysis;
 		}
 
 	}
