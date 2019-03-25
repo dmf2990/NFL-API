@@ -1,5 +1,6 @@
 package io.dmf.NFLAPI.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -42,6 +43,7 @@ public class Team {
 			this.teamName = teamName;
 			this.mascot = mascot;
 			this.division = division;
+			this.allPlayers = new ArrayList<Player>();
 		}
 		
 		public void addStat(Stat stat) {

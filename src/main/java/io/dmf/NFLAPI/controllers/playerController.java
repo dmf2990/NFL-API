@@ -12,7 +12,7 @@ import io.dmf.NFLAPI.Repository.PlayerRepository;
 import io.dmf.NFLAPI.models.Player;
 
 @RestController
-@RequestMapping("/players")
+@RequestMapping("/allPlayers")
 public class playerController {
 
 	@Resource

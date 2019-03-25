@@ -58,15 +58,15 @@ public void run(String... args) throws Exception {
 	Player player4 = playerRepo.save(new Player("Prime Time", "CornerBack", team0));
 
 	
-	Stat stat1 = statRepo.save(new Stat(""));
-	Stat stat2 = statRepo.save(new Stat(""));
-	Stat stat3 = statRepo.save(new Stat(""));
-	Stat stat4 = statRepo.save(new Stat(""));
+	Stat stat1 = statRepo.save(new Stat("12"));
+	Stat stat2 = statRepo.save(new Stat("12"));
+	Stat stat3 = statRepo.save(new Stat("12"));
+	Stat stat4 = statRepo.save(new Stat("12"));
 
-	Analysis analysis1 = analysisRepo.save(new Analysis("", ""));
-	Analysis analysis2 = analysisRepo.save(new Analysis("", ""));
-	Analysis analysis3 = analysisRepo.save(new Analysis("", ""));
-	Analysis analysis4 = analysisRepo.save(new Analysis("", ""));
+	Analysis analysis1 = analysisRepo.save(new Analysis("65", "34"));
+	Analysis analysis2 = analysisRepo.save(new Analysis("56", "3"));
+	Analysis analysis3 = analysisRepo.save(new Analysis("65", "34"));
+	Analysis analysis4 = analysisRepo.save(new Analysis("56", "34"));
 		
 	// add stat -- to player, division, team
 	player1.addStat(stat1);

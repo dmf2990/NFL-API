@@ -8,6 +8,7 @@ public class NflApiApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(NflApiApplication.class, args);
+		System.out.println("Drew, it's running");
 	}
 
 }

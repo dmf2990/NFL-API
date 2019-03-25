@@ -17,7 +17,7 @@ import io.dmf.NFLAPI.models.Division;
 
 
 @RestController
-@RequestMapping("/divisions")
+@RequestMapping("/allDivisions")
 public class DivisionController {
 	
 	@Resource
