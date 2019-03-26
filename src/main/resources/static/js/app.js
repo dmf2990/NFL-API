@@ -1,49 +1,35 @@
+import events from "./utils/events/event-actions"
+import api from "./utils/api/api-actions"
 
-getRequest('/allTeams', allTeams => {
-    getAppContext.innerHTML = renderTeams(allTeams);
-})
+import AllTeams from './components/AllTeams'
 
+main()
+
+//AllTeams(allTeams) - renders all teams  
+function main() {
+  api.getRequest('/allTeams', allTeams => {
+    getAppContext.innerHTML = AllTeams(allTeams);
+  })
+
+  // event delegation 
+  events.on(getAppContext(), 'click', () => {
+    if (event.target.classList.contains('add-team__submit')) {
+      // const submitButton = event.target
+      const teamName = document.querySelector('.add-team__teamName').value //.value = gives actual data user types not just the element class name
+      const teamMascot = document.querySelector('.add-team__mascot').value
+
+      api.postRequest('/allTeams/add', {
+        teamNameKey: teamName,
+        teamMascotValue: teamMascot 
+      },(allTeams) => getAppContext().innerHTML = AllTeams(allTeams)) //re-rendering teams - refreshes page with new material
+    }
+  })
+}
 //checks for anything that has an id of app in html
 //gets application context every time we call this application opposed to just declaring variable once (good way to have errors)
 function getAppContext(){
     return document.querySelector("#app")
-}
+  }
 
-// only things unique to all getRequests (location and callback)
-// location = is '/allTeams' in line 4 - gets data we want
-// callback = function executed upon a successful data retrieval
-function getRequest(location, callback) {
-  fetch(location) 
-    .then(response => response.json()) 
-    .then(data => callback(data))
-    .catch(err => console.log(err));
-}
 
-function renderTeams(allTeams) {
-    return `<ul class="allTeams"> 
-      ${allTeams.map(team => {
-          return `  
-            <li class="team">
-              <h3 class="team__name">${team.teamName} ${team.mascot}</h3>
-              <ul class="allPlayers">
-                ${renderPlayers(team.allPlayers)} 
-              </ul>  
-            </li>         
-          `; 
-        }).join('')}
-        </ul>
-      `;
-    }
 
-//encapsulated in renderTeams, thus abstracted
-function renderPlayers(allPlayers) {
-    return allPlayers
-        .map(player => {
-            return `
-            <li class="player">
-                <h5 class="player__name">${player.playerName}</h5>
-                <p class="player__position">${player.playerPosition}</p>
-            </li>
-          `;
-        }).join('')
-    }

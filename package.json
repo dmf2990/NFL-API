@@ -1,0 +1,23 @@
+{
+  "name": "NFL-API",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "parcel build src/main/resources/static/html/index.html && rm src/main/resources/static/*.html && rm src/main/resources/static/*.js && rm src/main/resources/static/*.js.map && mv ./dist/* src/main/resources/static && rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmf2990/NFL-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmf2990/NFL-API/issues"
+  },
+  "homepage": "https://github.com/dmf2990/NFL-API#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.3"
+  }
+}

@@ -43,7 +43,7 @@ public class Team {
 			this.teamName = teamName;
 			this.mascot = mascot;
 			this.division = division;
-			this.allPlayers = new ArrayList<Player>();
+			this.allPlayers = new ArrayList<Player>();//need this collection to add to data base
 		}
 		
 		public void addStat(Stat stat) {
