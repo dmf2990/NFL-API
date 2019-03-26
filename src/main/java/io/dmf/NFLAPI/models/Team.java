@@ -2,7 +2,6 @@ package io.dmf.NFLAPI.models;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,17 +24,17 @@ public class Team {
 		private int rating;
 
 		@OneToMany(mappedBy = "team")
-		private Collection<Player> allPlayers = new HashSet<Player>();
+		private Collection<Player> allPlayers; // = new HashSet<Player>();
 
 		@JsonIgnore
 		@ManyToOne
 		private Division division;
 
 		@ManyToMany
-		private Collection<Stat> allStats = new HashSet<Stat>();
+		private Collection<Stat> allStats; // = new HashSet<Stat>();
 		
 		@OneToMany(mappedBy = "team")
-		private Collection<Analysis> allAnalysis = new HashSet<Analysis>();
+		private Collection<Analysis> allAnalysis; // = new HashSet<Analysis>();
 
 		public Team() {}
 
@@ -73,6 +72,10 @@ public class Team {
 
 		public Division getDivision() {
 			return division;
+		}
+		
+		public void addPlayer (Player player) {
+			allPlayers.add(player);
 		}
 		
 		public Collection<Player> getAllPlayers() {

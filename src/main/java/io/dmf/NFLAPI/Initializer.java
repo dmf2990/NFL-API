@@ -67,25 +67,27 @@ public void run(String... args) throws Exception {
 	Analysis analysis2 = analysisRepo.save(new Analysis("56", "3"));
 	Analysis analysis3 = analysisRepo.save(new Analysis("65", "34"));
 	Analysis analysis4 = analysisRepo.save(new Analysis("56", "34"));
-		
-	// add stat -- to player, division, team
-	player1.addStat(stat1);
-	player1 = playerRepo.save(player1);
 	
-	division1.addStat(stat2);
-	division1 = divisionRepo.save(division1);	
 	
-	team0.addStat(stat3);
+	team0.addPlayer(player1);
 	team0 = teamRepo.save(team0);
 	
-	// add analysis -- to player, division, team -- comment
-	analysis1.addPlayer(player1);
-	analysis1 = analysisRepo.save(analysis1);
+	team1.addPlayer(player2);
+	team1 = teamRepo.save(team1);
 	
-	analysis2.addTeam(team2);
-	analysis2 = analysisRepo.save(analysis2);
+	team2.addPlayer(player3);
+	team2.addPlayer(player4);
+
+	team2 = teamRepo.save(team2);
 	
-	analysis3.addDivision(division3);
-	analysis3 = analysisRepo.save(analysis3);
+//	// add analysis -- to player, division, team -- comment
+//	analysis1.addPlayer(player1);
+//	analysis1 = analysisRepo.save(analysis1);
+//	
+//	analysis2.addTeam(team2);
+//	analysis2 = analysisRepo.save(analysis2);
+//	
+//	analysis3.addDivision(division3);
+//	analysis3 = analysisRepo.save(analysis3);
 }
 }
