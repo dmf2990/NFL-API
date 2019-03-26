@@ -8,7 +8,7 @@ main()
 //AllTeams(allTeams) - renders all teams  
 function main() {
   api.getRequest('/allTeams', allTeams => {
-    getAppContext.innerHTML = AllTeams(allTeams);
+    getAppContext().innerHTML = AllTeams(allTeams);
   })
 
   // event delegation 
