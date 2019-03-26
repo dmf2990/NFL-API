@@ -38,7 +38,6 @@ public class TeamController {
 		String teamName = json.getString("teamName"); // connects us to js post request
 		String mascot = json.getString("mascot"); // connects us to post request
 		
-		//////////// HOW TO PASS OBJECT HERE for DIVISION????????????????
 		
 		// make/save this object in repo
 		teamRepo.save(new Team(teamName, mascot, null));
