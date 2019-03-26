@@ -30,10 +30,10 @@ public class Division {
 	
 	public Division() {} // JPA hook
 	
-	public Division(String divName, String conference, int rating) {
+	public Division(String divName, String conference) {
 		this.divName = divName;
 		this.conference = conference;
-		this.rating = rating;
+		//this.rating = rating;
 	}
 	
 	public int getRating() {

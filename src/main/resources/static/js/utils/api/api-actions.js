@@ -22,9 +22,7 @@ function getRequest(location, callback) {
   
   export default {
       getRequest,
-      postRequest,
-      putRequest,
-      deleteRequest
+      postRequest
   }; 
 
 

@@ -33,9 +33,9 @@ public class DivisionController {
 		JSONObject json = new JSONObject(body);
 		String divisionName = json.getString("divisionName");
 		String conference = json.getString("conference");
-		int rating = Integer.parseInt(json.getString("rating"));
+		//int rating = Integer.parseInt(json.getString("rating"));
 		
-		divisionRepo.save(new Division(divisionName, conference, rating));
+		divisionRepo.save(new Division(divisionName, conference));
 		
 		return (Collection<Division>) divisionRepo.findAll();
 	}
