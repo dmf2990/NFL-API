@@ -9,24 +9,29 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Division {
+	
 	@Id
 	@GeneratedValue
 	private Long id;
 	private String divName;
 	private String conference;
 	
+	
 	private int rating;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "division")
-	private Collection<Team> allTeams = new HashSet<>();
+	private Collection<Team> allTeams;// = new HashSet<>();
 	
 	@ManyToMany
-	private Collection<Stat> allStats = new HashSet<>();
+	private Collection<Stat> allStats; //= new HashSet<>();
 	
 	@OneToMany(mappedBy = "division")
-	private Collection<Analysis> allAnalysis = new HashSet<>();
+	private Collection<Analysis> allAnalysis; 
 	
 	public Division() {} // JPA hook
 	

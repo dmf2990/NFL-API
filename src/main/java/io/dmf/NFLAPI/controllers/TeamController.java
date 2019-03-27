@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.dmf.NFLAPI.Repository.DivisionRepository;
 import io.dmf.NFLAPI.Repository.TeamRepository;
+import io.dmf.NFLAPI.models.Division;
 import io.dmf.NFLAPI.models.Team;
 
 @RestController
@@ -21,6 +23,9 @@ public class TeamController {
 
 	@Resource
 	TeamRepository teamRepo;
+	
+	@Resource
+	DivisionRepository divisionRepo;
 
 	@GetMapping("")
 	public Collection<Team> getAllTeams() {
@@ -37,9 +42,8 @@ public class TeamController {
 		JSONObject json = new JSONObject(body);
 		String teamName = json.getString("teamNameKey"); // connects us to js post request
 		String mascot = json.getString("teamMascotValue"); // connects us to post request
-		
-		
-		// make/save this object in repo
+		Division division = divisionRepo.findByDivName(json.getString("teamDivision"));
+		System.out.println(division);
 		teamRepo.save(new Team(teamName, mascot, null));
 		
 		// returning collection of teams
