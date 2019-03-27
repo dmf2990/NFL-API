@@ -2,16 +2,18 @@ import AllPlayers from './AllPlayers'
 
 export default function AllTeams(allTeams) {
   return `
+  
   <ul class="allTeams"> 
     ${allTeams.map(team => {
         return `  
           <li class="team">
             <h3 class="team__name">${team.teamName} ${team.mascot}</h3>
-            <ul class="allPlayers">
-              ${AllPlayers(team.allPlayers)} 
-            </ul>  
+            <button class="dropDown">Show Players</button>
+              <ul class="allPlayers">
+                ${AllPlayers(team.allPlayers)} 
+              </ul>  
           </li>         
-        `; 
+        `;
       }).join('')}
       </ul>
       <section class="add-Team">

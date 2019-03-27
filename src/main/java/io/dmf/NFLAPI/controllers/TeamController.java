@@ -35,8 +35,8 @@ public class TeamController {
 	public Collection<Team> addTeam(@RequestBody String body) throws JSONException {
 		// grab and package json object
 		JSONObject json = new JSONObject(body);
-		String teamName = json.getString("teamName"); // connects us to js post request
-		String mascot = json.getString("mascot"); // connects us to post request
+		String teamName = json.getString("teamNameKey"); // connects us to js post request
+		String mascot = json.getString("teamMascotValue"); // connects us to post request
 		
 		
 		// make/save this object in repo
