@@ -8,7 +8,7 @@ export default function AllTeams(allTeams) {
     ${allTeams.map(team => {
         return `  
           <li class="team">
-            <h3 class="team__name">${team.teamName} ${team.mascot} ${AllDivisions(division.divName)}</h3>
+            <h3 class="team__name">${team.teamName} ${team.mascot} ${team.division.divName}</h3>
             <button class="dropDown">Show Players</button>
               <ul class="allPlayers">
                 ${AllPlayers(team.allPlayers)} 
