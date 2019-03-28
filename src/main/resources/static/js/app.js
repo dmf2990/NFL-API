@@ -37,6 +37,7 @@ function getAppContext() {
   return document.querySelector("#app");
 }
 
+// drop down click (show players)
 events.on(document.querySelector("#app"), "click", event => {
   if (event.target.classList.contains("dropDown")) {
    // toggle hide specific players for that spec team
@@ -45,4 +46,12 @@ events.on(document.querySelector("#app"), "click", event => {
   }
 });
 
+// drop down click (show teams)
+events.on(document.querySelector("#app"), "click", event => {
+  if (event.target.classList.contains("teamDropDown")) {
+   // toggle hide specific players for that spec team
+    event.target.parentElement.querySelectorAll('.team')
+      .forEach(team => team.classList.toggle("hideTeams"));
+  }
+});
 

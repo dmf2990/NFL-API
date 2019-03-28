@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAIA,iBACI,YACJ","file":"style.b29920e0.css","sourceRoot":"../src/main/resources/static/html","sourcesContent":[".hide{\n    display: none;\n}\n\n.hideTeams{\n    display: none;\n}"]}

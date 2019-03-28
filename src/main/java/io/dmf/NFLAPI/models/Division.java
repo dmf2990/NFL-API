@@ -25,19 +25,19 @@ public class Division {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "division")
-	private Collection<Team> allTeams;// = new HashSet<>();
+	private Collection<Team> allTeams;
 	
 	@ManyToMany
-	private Collection<Stat> allStats; //= new HashSet<>();
+	private Collection<Stat> allStats; 
 	
 	@OneToMany(mappedBy = "division")
 	private Collection<Analysis> allAnalysis; 
 	
 	public Division() {} // JPA hook
 	
-	public Division(String divName, String conference) {
+	public Division(String divName) {
 		this.divName = divName;
-		this.conference = conference;
+
 		//this.rating = rating;
 	}
 	
@@ -58,9 +58,6 @@ public class Division {
 		return divName;
 	}
 
-	public String getConference() {
-		return conference;
-	}
 	
 	public Collection<Team> getAllTeams() {
 		return allTeams;
