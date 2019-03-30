@@ -17,14 +17,14 @@ function main() {
       // const submitButton = event.target
       const teamName = document.querySelector(".add-team__teamName").value; //.value = gives actual data user types not just the element class name
       const teamMascot = document.querySelector(".add-team__mascot").value;
-      //const teamDivision = document.querySelector(".add-team__division").value;
+      const teamDivision = document.querySelector(".add-team__division").value;
 
       api.postRequest(
         "/allTeams/add",
         {
           teamNameKey: teamName,
           teamMascotValue: teamMascot,
-        //  teamDivision: teamDivision
+          teamDivision: teamDivision
         },
         allTeams => (getAppContext().innerHTML = AllTeams(allTeams))
       ); //re-rendering teams - refreshes page with new material

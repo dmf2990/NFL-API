@@ -18,7 +18,6 @@ public class Division {
 	@GeneratedValue
 	private Long id;
 	private String divName;
-	private String conference;
 	
 	
 	private int rating;

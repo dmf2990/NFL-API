@@ -43,7 +43,7 @@ public class TeamController {
 		String teamName = json.getString("teamNameKey"); // connects us to js post request
 		String mascot = json.getString("teamMascotValue"); // connects us to post request
 		Division division = divisionRepo.findByDivName(json.getString("teamDivision"));
-		teamRepo.save(new Team(teamName, mascot, null));
+		teamRepo.save(new Team(teamName, mascot, division));
 		
 		// returning collection of teams
 		return (Collection<Team>) teamRepo.findAll();

@@ -21,6 +21,7 @@ export default function AllTeams(allTeams) {
       <section class="add-Team">
         <input type="text" class="add-team__teamName" placeholder="Team Name">
         <input type="text" class="add-team__mascot" placeholder="Mascot">
+        <input type="text" class="add-team__division" placeholder="Division">
           <button class="add-team__submit">Add Team</button>
       </section>
     `;
