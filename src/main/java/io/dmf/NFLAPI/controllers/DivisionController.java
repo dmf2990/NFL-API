@@ -28,16 +28,15 @@ public class DivisionController {
 		return (Collection<Division>) divisionRepo.findAll();
 	}
 	
-//	@PostMapping("/add")
-//	public Collection<Division> addDivision(@RequestBody String body) throws JSONException {
-//		JSONObject json = new JSONObject(body);
-//		String divisionName = json.getString("divisionName");
-//		String conference = json.getString("conference");
-//		//int rating = Integer.parseInt(json.getString("rating"));
-//		
-//		divisionRepo.save(new Division(divisionName, conference));
-//		
-//		return (Collection<Division>) divisionRepo.findAll();
-//	}
+	@PostMapping("/add")
+	public Collection<Division> addDivision(@RequestBody String body) throws JSONException {
+		JSONObject json = new JSONObject(body);
+		String divisionName = json.getString("divisionNameKey");
+		//int rating = Integer.parseInt(json.getString("rating"));
+		
+		divisionRepo.save(new Division(divisionName));
+		
+		return (Collection<Division>) divisionRepo.findAll();
+	}
 
 }

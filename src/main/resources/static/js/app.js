@@ -2,11 +2,14 @@ import events from "./utils/events/event-actions";
 import api from "./utils/api/api-actions";
 
 import AllTeams from "./components/AllTeams";
+import AllDivisions from "./components/AllDivisions";
 
-main();
+divisionsWithTeams();
+teamsWithPlayers();
+
 
 //AllTeams(allTeams) - renders all teams
-function main() {
+function teamsWithPlayers() {
   api.getRequest("/allTeams", allTeams => {
     getAppContext().innerHTML = AllTeams(allTeams);
   });
@@ -31,6 +34,29 @@ function main() {
     }
   });
 }
+
+//AllDivisions(allDivisions) - renders all divs
+function divisionsWithTeams() {
+  api.getRequest("/allDivisions", allDivisions => {
+    getAppContext().innerHTML = AllDivisions(allDivisions);
+  });
+
+  // event delegation -- adding a division
+  events.on(getAppContext(), "click", () => {
+    if (event.target.classList.contains("add-division__submit")) {
+      // const submitButton = event.target
+      const divisionName = document.querySelector(".add-division__divName").value; //.value = gives actual data user types not just the element class name
+      api.postRequest(
+        "/allDivisions/add",
+        {
+          divNameKey: divisionName
+        },
+        allDivisions => (getAppContext().innerHTML = AllDivisions(allDivisions))
+      ); //re-rendering teams - refreshes page with new material
+    }
+  });
+}
+
 //checks for anything that has an id of app in html
 //gets application context every time we call this application opposed to just declaring variable once (good way to have errors)
 function getAppContext() {
@@ -54,4 +80,8 @@ events.on(document.querySelector("#app"), "click", event => {
       .forEach(team => team.classList.toggle("hideTeams"));
   }
 });
+
+// add drop down to show divisions
+
+// add drop down to show teams in divisions
 

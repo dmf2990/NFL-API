@@ -1,5 +1,4 @@
 import AllPlayers from './AllPlayers'
-import AllDivisions from './AllDivisions'
 
 export default function AllTeams(allTeams) {
   return `
