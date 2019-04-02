@@ -1,15 +1,13 @@
 package io.dmf.NFLAPI.models;
 
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Division {
@@ -22,7 +20,7 @@ public class Division {
 	
 	private int rating;
 	
-	@JsonIgnore
+//	@JsonIgnore
 	@OneToMany(mappedBy = "division")
 	private Collection<Team> allTeams;
 	
@@ -36,6 +34,7 @@ public class Division {
 	
 	public Division(String divName) {
 		this.divName = divName;
+		this.allTeams = new ArrayList<>();
 
 		//this.rating = rating;
 	}
@@ -64,6 +63,10 @@ public class Division {
 	
 	public void addStat(Stat stat) {
 		allStats.add(stat);	
+	}
+	
+	public void addTeam(Team team) {
+		allTeams.add(team);
 	}
 	
 	public Collection<Stat> getAllStats() {

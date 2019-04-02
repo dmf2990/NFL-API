@@ -41,9 +41,21 @@ public void run(String... args) throws Exception {
 	Team team0 = teamRepo.save(new Team("team0", "falcon", division0));
 	Player player0 = playerRepo.save(new Player("Prime Time", "CornerBack", team0));
 	
+	team0.addPlayer(player0);
+	teamRepo.save(team0);
+	
+	division0.addTeam(team0);
+	divisionRepo.save(division0);
+	
+	
+	
+	
 	Division division1 = divisionRepo.save(new Division("NFC NORTH"));
 	Team team1 = teamRepo.save(new Team("team1", "49ers", division1));
 	Player player1 = playerRepo.save(new Player("Ronny Lot", "HumanCannon", team1));
+	division1.addTeam(team1);
+	divisionRepo.save(division1);
+	
 	
 	Division division2 = divisionRepo.save(new Division("AFC WEST"));
 	Team team2 = teamRepo.save(new Team("team2", "raider", division2));

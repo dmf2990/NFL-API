@@ -26,7 +26,7 @@ public class Team {
 		@OneToMany(mappedBy = "team")
 		private Collection<Player> allPlayers; // = new HashSet<Player>();
 
-		
+		@JsonIgnore
 		@ManyToOne
 		private Division division;
 

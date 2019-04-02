@@ -5,7 +5,7 @@ import AllTeams from "./components/AllTeams";
 import AllDivisions from "./components/AllDivisions";
 
 divisionsWithTeams();
-teamsWithPlayers();
+
 
 
 //AllTeams(allTeams) - renders all teams
@@ -74,14 +74,21 @@ events.on(document.querySelector("#app"), "click", event => {
 
 // drop down click (show teams)
 events.on(document.querySelector("#app"), "click", event => {
-  if (event.target.classList.contains("teamDropDown")) {
+  if (event.target.classList.contains("dropDownDivTeams")) {
    // toggle hide specific players for that spec team
     event.target.parentElement.querySelectorAll('.team')
-      .forEach(team => team.classList.toggle("hideTeams"));
+      .forEach(team => team.classList.toggle("hide"));
   }
 });
 
 // add drop down to show divisions
+events.on(document.querySelector("#app"), "click", event => {
+
+  if (event.target.classList.contains("divisionDropDown")) {
+    // toggle hide specific players for that spec team
+    event.target.parentElement.querySelectorAll('.division')
+    .forEach(division => division.classList.toggle("hide"));
+  }
+});
 
 // add drop down to show teams in divisions
-

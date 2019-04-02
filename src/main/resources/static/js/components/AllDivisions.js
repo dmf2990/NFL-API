@@ -6,12 +6,12 @@ export default function AllDivisions(allDivisions) {
     <ul class="allDivisions"> 
       ${allDivisions.map(division => {
           return `  
-            <li class="division">
+            <li class="division hide">
               <h3> Division </h3> 
               <h4 class="division__name">${division.divName}</h4>
               <button class="dropDownDivTeams">Division Teams</button>
                 <ul class="allDivisions">
-                              
+                ${AllTeams(division.allTeams)}         
                 </ul>
             </li>         
           `;

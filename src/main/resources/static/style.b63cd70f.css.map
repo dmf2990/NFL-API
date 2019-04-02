@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAIA,iBACI,YACJ,CAEA,KACI,qBACJ","file":"style.b63cd70f.css","sourceRoot":"../src/main/resources/static/html","sourcesContent":[".hide{\n    display: none;\n}\n\n.hideTeams{\n    display: none;\n}\n\nbody{\n    background-color: grey\n}"]}
