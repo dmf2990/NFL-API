@@ -19,10 +19,21 @@ function getRequest(location, callback) {
       .then(data => callback(data)) 
       .catch(err => console.log(err));
   }
+
+  function deleteRequest(location, requestBody, callback) {
+    fetch(location, {
+      method: "DELETE",
+      body: JSON.stringify(requestBody) //stringify takes in json object, makes string that can be passed back and forth
+    }) 
+      .then(response => response.json()) 
+      .then(data => callback(data)) 
+      .catch(err => console.log(err));
+  }
   
   export default {
       getRequest,
-      postRequest
+      postRequest,
+      deleteRequest
   }; 
 
 

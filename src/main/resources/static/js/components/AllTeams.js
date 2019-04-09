@@ -8,7 +8,9 @@ export default function AllTeams(allTeams) {
          <li class="team hide">
             <h3> Team </h3>
             <h4 class="team__name">${team.teamName} ${team.mascot}</h4>
+            <input type="hidden" value="${team.id}" class="teamID">
             <button class="dropDown">Show Players</button>
+            <button class="deleteTeam">Delete Team</button>
               <ul class="allPlayers">
                 ${AllPlayers(team.allPlayers)} 
               </ul>  
@@ -20,7 +22,8 @@ export default function AllTeams(allTeams) {
         <input type="text" class="add-team__teamName" placeholder="Team Name">
         <input type="text" class="add-team__mascot" placeholder="Mascot">
         <input type="text" class="add-team__division" placeholder="Division">
-          <button class="add-team__submit">Add Team</button>
+
+        <button class="add-team__submit">Add Team</button>
       </section>
     `;
   }

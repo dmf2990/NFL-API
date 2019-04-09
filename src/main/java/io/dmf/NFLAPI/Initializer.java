@@ -50,12 +50,11 @@ public void run(String... args) throws Exception {
 	
 	
 	
-	Division division1 = divisionRepo.save(new Division("NFC NORTH"));
+	Division division1 = divisionRepo.save(new Division("NFC SOUTH"));
 	Team team1 = teamRepo.save(new Team("team1", "49ers", division1));
 	Player player1 = playerRepo.save(new Player("Ronny Lot", "HumanCannon", team1));
 	division1.addTeam(team1);
 	divisionRepo.save(division1);
-	
 	
 	Division division2 = divisionRepo.save(new Division("AFC WEST"));
 	Team team2 = teamRepo.save(new Team("team2", "raider", division2));
@@ -65,9 +64,9 @@ public void run(String... args) throws Exception {
 	Team team3 = teamRepo.save(new Team("team3", "dawgs", division3));
 	Player player3 = playerRepo.save(new Player("Baker Mayfield", "Quarterback", team2));
 	
-	Division division4 = divisionRepo.save(new Division("NFC NORTH"));
-	Team team4 = teamRepo.save(new Team("team4", "whatever", division4));
-	Player player4 = playerRepo.save(new Player("Prime Time", "CornerBack", team0));
+//	Division division4 = divisionRepo.save(new Division("NFC NORTH"));
+//	Team team4 = teamRepo.save(new Team("team4", "whatever", division4));
+//	Player player4 = playerRepo.save(new Player("Prime Time", "CornerBack", team0));
 
 	
 	Stat stat1 = statRepo.save(new Stat("12"));
@@ -87,8 +86,8 @@ public void run(String... args) throws Exception {
 	team1.addPlayer(player2);
 	team1 = teamRepo.save(team1);
 	
-	team2.addPlayer(player3);
-	team2.addPlayer(player4);
+//	team2.addPlayer(player3);
+//	team2.addPlayer(player4);
 
 	team2 = teamRepo.save(team2);
 	
