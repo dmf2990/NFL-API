@@ -12,9 +12,9 @@ JPA, H2, Eclipse, Visual Studio Code, and Java Spring MVC model.
 
 ## Instructions for use 
 
-Clone 'master' Branch project from GitHub - navigate into the directory, and 'gradle eclipse' this file. Once imported to Eclipse, run the application as a Java Project.  
+Clone `master` Branch project from GitHub - navigate into the directory, and `gradle eclipse` this file. Once imported to Eclipse, run the application as a Java Project.  
 
-Then open your terminal (bash) and enter 'npm run build'.  This will tell Parcel to bundle our JavaScript files, and then you will be able to navigate to `localhost:8080/`
+Then open your terminal (bash) and enter `npm run build`.  This will tell Parcel to bundle our JavaScript files, and then you will be able to navigate to `localhost:8080/`
 
 ### What I really like?
 
