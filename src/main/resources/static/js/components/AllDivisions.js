@@ -3,6 +3,13 @@ import AllTeams from './AllTeams'
 export default function AllDivisions(allDivisions) {
     return `
     <button class="divisionDropDown">Show Divisions</button>
+    <section class="add-Team mainContainer">
+    <input type="text" class="add-team__teamName" placeholder="Team Name">
+    <input type="text" class="add-team__mascot" placeholder="Mascot">
+    <input type="text" class="add-team__division" placeholder="Division">
+
+    <button class="add-team__submit">Add Team</button>
+  </section>
     <ul class="allDivisions"> 
       ${allDivisions.map(division => {
           return `  

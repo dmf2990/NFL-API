@@ -5,3 +5,41 @@
 .hideTeams{
     display: none;
 }
+
+.header{
+    background-color: black;
+    color: white;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    max-height: 80px;
+}
+
+*{
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Courier New', Courier, monospace; 
+}
+
+body{
+    background-image: URL(../images/tecmo.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: auto;
+}
+
+.mainContainer{
+    background-color: lightgrey;
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+}
+
+.allDivisions{
+    background-color: rgba(246,3,1,.7);
+    color: white;
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+}

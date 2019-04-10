@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.css"],"names":[],"mappings":"AAIA,iBACI,YACJ,CAEA,EACI,iBAAkB,CAClB,oBAAqB,CACrB,mBACJ","file":"style.3662c453.css","sourceRoot":"../src/main/resources/static/html","sourcesContent":[".hide{\n    display: none;\n}\n\n.hideTeams{\n    display: none;\n}\n\n*{\n    text-align: center;\n    list-style-type: none;\n    font-family: cursive;\n}"]}
