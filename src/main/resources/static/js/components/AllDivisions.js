@@ -6,7 +6,13 @@ export default function AllDivisions(allDivisions) {
     <section class="add-Team mainContainer">
     <input type="text" class="add-team__teamName" placeholder="Team Name">
     <input type="text" class="add-team__mascot" placeholder="Mascot">
-    <input type="text" class="add-team__division" placeholder="Division">
+    
+    <select class="add-team__division">
+      ${allDivisions.map(division => {
+        return `
+      <option value="${division.id}">${division.divName}</option>`
+      })}
+    </select>
 
     <button class="add-team__submit">Add Team</button>
   </section>
@@ -30,3 +36,6 @@ export default function AllDivisions(allDivisions) {
         </section>
       `;
     }
+  
+    
+  
