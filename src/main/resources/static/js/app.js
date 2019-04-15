@@ -1,8 +1,14 @@
 import events from "./utils/events/event-actions";
 import api from "./utils/api/api-actions";
 
-import AllTeams from "./components/AllTeams";
 import AllDivisions from "./components/AllDivisions";
+import Division from "./components/Division";
+
+// get single div
+const getDivision = (currentId) => {
+  api.getRequest('/allDivisions/' + currentId, (division) => document.querySelector('.division__container').innerHTML = Division(division))
+
+}
 
 divisionsWithTeams();
 
@@ -53,6 +59,12 @@ function divisionsWithTeams() {
           )
         }
 
+        //single division
+        if(event.target.classList.contains('singleDivisionDropDown')) {
+          const divisionId = event.target.parentElement.querySelector('.add-team__division').value
+          getDivision(divisionId)
+        }
+
       });
 }
 
@@ -88,5 +100,4 @@ events.on(document.querySelector("#app"), "click", event =>{
         .forEach(division => division.classList.toggle("hide"));
       }
     });
-
 // add drop down to show teams in divisions

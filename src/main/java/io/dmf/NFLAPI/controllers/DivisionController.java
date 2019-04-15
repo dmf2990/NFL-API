@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,12 @@ public class DivisionController {
 	public Collection<Division> getAllDivisions(){
 		return (Collection<Division>) divisionRepo.findAll();
 	}
+	
+	@GetMapping("/{id}")
+	public Division getSingleDivisions(@PathVariable Long id){
+		return divisionRepo.findById(id).get();
+	}
+	
 	
 	@PostMapping("/add")
 	public Collection<Division> addDivision(@RequestBody String body) throws JSONException {
