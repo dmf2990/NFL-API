@@ -10,7 +10,6 @@ export default function AllDivisions(allDivisions) {
         <option value="${division.id}">${division.divName}</option>`
         })}
       </select>
-
    
     <section class="add-Team mainContainer">
         <input type="text" class="add-team__teamName" placeholder="Team Name">
@@ -36,7 +35,7 @@ export default function AllDivisions(allDivisions) {
                 <h4 class="division__name">${division.divName}</h4>
                 <button class="dropDownDivTeams">Division Teams</button>
                   <ul class="allDivisions">
-                  ${AllTeams(division.allTeams)}         
+                    ${AllTeams(division.allTeams)}         
                   </ul>
               </li>         
             `;

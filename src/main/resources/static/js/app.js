@@ -7,7 +7,6 @@ import Division from "./components/Division";
 // get single div
 const getDivision = (currentId) => {
   api.getRequest('/allDivisions/' + currentId, (division) => document.querySelector('.division__container').innerHTML = Division(division))
-
 }
 
 divisionsWithTeams();

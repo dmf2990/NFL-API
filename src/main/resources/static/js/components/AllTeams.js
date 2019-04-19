@@ -6,7 +6,6 @@ export default function AllTeams(allTeams) {
     ${allTeams.map(team => {
         return `  
          <li class="team hide">
-            <h3> Team </h3>
             <h4 class="team__name">${team.teamName} ${team.mascot}</h4>
             <input type="hidden" value="${team.id}" class="teamID">
             <button class="dropDown">Show Players</button>
